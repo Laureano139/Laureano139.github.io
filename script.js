@@ -1,34 +1,3 @@
-document.addEventListener('scroll', () => {
-    const header = document.querySelector('header');
-
-    if (window.scrollY > 0) {
-        header.classList.add('scrolled');
-    } else {
-        header.classList.remove('scrolled');
-    }
-})
-
-document.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.navbar a');
-
-    let currentSection = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        if (pageYOffset >= sectionTop - 60) {
-            currentSection = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').includes(currentSection)) {
-            link.classList.add('active');
-        }
-    });
-});
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const canvas = document.getElementById('snakeGame');
     const ctx = canvas.getContext('2d');
@@ -45,7 +14,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
     function initGame() {
         snake = [];
-        snake[0] = { x: 5 * box, y: 5 * box }; // Coordenadas centrais
+        snake[0] = { x: 5 * box, y: 5 * box };
         direction = '';
         food = spawnFood();
         score = 0;
@@ -56,6 +25,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         clearInterval(timer);
         game = setInterval(draw, 100);
         timer = setInterval(updateTimer, 1000);
+        document.body.classList.add('no-scroll'); // Adicionar classe no-scroll
     }
 
     function spawnFood() {
@@ -136,12 +106,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (snakeX < 0 || snakeY < 0 || snakeX >= canvasSize || snakeY >= canvasSize || collision(newHead, snake)) {
             clearInterval(game);
             clearInterval(timer);
+            document.body.classList.remove('no-scroll'); // Remover classe no-scroll
         }
 
         snake.unshift(newHead);
     }
 
-    // Adicionar suporte a gestos para dispositivos móveis
     let touchStartX = null;
     let touchStartY = null;
 
