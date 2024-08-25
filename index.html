@@ -72,6 +72,8 @@
                             <i class='bx bxl-javascript' data-tooltip="JavaScript"></i>
                             <i class='bx bxl-docker' data-tooltip="Docker"></i>
                             <i class='bx bxl-mongodb' data-tooltip="MongoDB"></i>
+                            <i class='bx bxl-react' data-tooltip="ReactJS"></i>
+                            <i class='bx bxl-nodejs' data-tooltip="NodeJS"></i>
                         </div>
                     </div>                                    
                 </div>
@@ -85,21 +87,45 @@
 
     <section class="projects" id="projects">
         <div class="container">
-            <div class="project_window">
-                <div class="project">
-                    <img src="images/gettube139.png" alt="">
-                    <figcaption>Youtube Audio and Video Downloader</figcaption>
-                    <a href="">View Project</a>
+            <div class="section-heading">
+                <h1 class="title">Projects</h1>
+            </div>
+            <div class="project-slider">
+                <button class="slider-btn left-btn"><i class='bx bx-chevron-left'></i></button>
+                <div class="project-window">
+                    <div class="projects-wrapper">
+                        <div class="project">
+                            <h3>React To-Do-List</h3>
+                            <p>A simple to do list website using React (Learning Project)</p>
+                            <a href="#">View Project Details</a>
+                        </div>
+                        <div class="project">
+                            <h3>Project 2</h3>
+                            <p>Brief description of Project 2.</p>
+                            <a href="#">View Project Details</a>
+                        </div>
+                        <div class="project">
+                            <h3>Project 3</h3>
+                            <p>Brief description of Project 3.</p>
+                            <a href="#">View Project Details</a>
+                        </div>
+                        <div class="project">
+                            <h3>Project 4</h3>
+                            <p>Brief description of Project 4.</p>
+                            <a href="#">View Project Details</a>
+                        </div>
+                        <div class="project">
+                            <h3>Project 5</h3>
+                            <p>Brief description of Project 5.</p>
+                            <a href="#">View Project Details</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="project">
-                    <img src="images/another-project.png" alt="">
-                    <figcaption>Another Project</figcaption>
-                    <a href="">View Project</a>
-                </div>
+                <button class="slider-btn right-btn"><i class='bx bx-chevron-right'></i></button>
             </div>
         </div>
+        
     </section>
-
 
 
 
@@ -133,6 +159,18 @@
     </section>
 
 </body>
+
+<!-- Modal for Projects -->
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <h2 id="modalTitle">Project Title</h2>
+        <p id="modalDescription">Detailed description of the project goes here.</p>
+        <div id="modalVideoContainer"></div>
+    </div>
+</div>
+
+
 
 <script src="https://smtpjs.com/v3/smtp.js"></script>
 <script>

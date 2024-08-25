@@ -157,3 +157,72 @@ document.addEventListener('DOMContentLoaded', (event) => {
         initGame();
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const projectsWrapper = document.querySelector('.projects-wrapper');
+    const leftBtn = document.querySelector('.left-btn');
+    const rightBtn = document.querySelector('.right-btn');
+    let currentIndex = 0;
+
+    function updateSliderPosition() {
+        projectsWrapper.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    leftBtn.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+            updateSliderPosition();
+        }
+    });
+
+    rightBtn.addEventListener('click', () => {
+        if (currentIndex < projectsWrapper.children.length - 1) {
+            currentIndex++;
+            updateSliderPosition();
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const modal = document.getElementById('projectModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDescription = document.getElementById('modalDescription');
+    const modalVideoContainer = document.getElementById('modalVideoContainer');
+    const closeBtn = document.querySelector('.close-btn');
+    const projectLinks = document.querySelectorAll('.project a');
+
+    projectLinks.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            const projectDetails = [
+                {
+                    title: 'React To-Do-List',
+                    description: 'A simple to-do list website using React. This project was created to learn the basics of React, including component-based architecture, state management, and JSX syntax.',
+                    image: 'images/reacttodolist.png',
+                    githubLink: 'https://github.com/Laureano139/React-Learning-My-To-Do-List'
+                },
+                // Outros projetos...
+            ];
+
+            modalTitle.innerText = projectDetails[index].title;
+            modalDescription.innerText = projectDetails[index].description;
+            modalVideoContainer.innerHTML = `
+                <img src="${projectDetails[index].image}" alt="${projectDetails[index].title}" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 20px;">
+                <a href="${projectDetails[index].githubLink}" target="_blank" class="github-btn">Visit on GitHub</a>
+            `;
+
+            modal.style.display = 'flex';
+        });
+    });
+
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});

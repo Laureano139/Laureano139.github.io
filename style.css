@@ -12,9 +12,9 @@
 }
 
 :root {
-    --bg-color: linear-gradient(135deg, #1f3c88, #000000); /* Gradiente aplicado aqui */
+    --bg-color: linear-gradient(135deg, #1f3c88, #000000);
     --second-bg-color: #f2545b;
-    --text-color: #ffffff; /* Texto em branco para destaque */
+    --text-color: #ffffff;
     --main-color: #1f3c88;
 }
 
@@ -40,7 +40,7 @@ header {
     position: fixed;
     width: 100%;
     padding: 2rem 9%;
-    background-color: rgba(0, 0, 0, 0.8); /* Background escuro */
+    background-color: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -49,7 +49,7 @@ header {
 }
 
 header.scrolled {
-    background-color: rgba(31, 60, 136, 0.9); /* Outro tom escuro */
+    background-color: rgba(31, 60, 136, 0.9);
 }
 
 .logo {
@@ -154,7 +154,7 @@ header.scrolled .navbar a {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--text-color);
     font-size: 1.6rem;
-    color: #1f3c88; /* Cor de destaque para o botão */
+    color: #1f3c88;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5 ease-in;
@@ -179,7 +179,7 @@ header.scrolled .navbar a {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--text-color);
     font-size: 1.6rem;
-    color: #1f3c88; /* Cor de destaque para o botão */
+    color: #1f3c88;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5 ease-in;
@@ -306,6 +306,15 @@ section .about {
     text-align: center;
 }
 
+.projects .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    gap: 7rem;
+}
+
 .project_window {
     display: flex;
     flex-wrap: wrap;
@@ -349,7 +358,7 @@ section .about {
     border-radius: 4rem;
     box-shadow: 0 0 1rem var(--text-color);
     font-size: 1.6rem;
-    color: #1f3c88; /* Cor de destaque para o botão */
+    color: #1f3c88;
     letter-spacing: .1rem;
     font-weight: 600;
     transition: .5 ease-in;
@@ -434,12 +443,18 @@ form .btn2 {
     background-color: var(--main-color);
 }
 
-/* Bloquear scroll quando o jogo está ativo */
+
 .no-scroll {
     overflow: hidden;
 }
 
-/* Adaptação para dispositivos móveis */
+
+
+
+
+
+
+
 @media (max-width: 768px) {
     header {
         padding: 1rem 5%;
@@ -454,7 +469,7 @@ form .btn2 {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        padding: 6rem 5% 2rem; /* Ajusta o espaçamento para dispositivos móveis */
+        padding: 6rem 5% 2rem;
     }
 
     .home-content, .home-img {
@@ -500,4 +515,233 @@ form .btn2 {
     .contact-right form {
         padding: 0 2rem;
     }
+}
+
+
+
+
+/* -------------------- PROJECTS SLIDER SECTION -------------------- */
+
+@keyframes gradientBackground {
+    0% {
+        background-position: 0% 50%;
+        background-color: #1f3c88;
+    }
+    25% {
+        background-position: 50% 50%;
+        background-color: #000000;
+    }
+    50% {
+        background-position: 100% 50%;
+        background-color: #f2545b;
+    }
+    75% {
+        background-position: 50% 50%;
+        background-color: #000000;
+    }
+    100% {
+        background-position: 0% 50%;
+        background-color: #1f3c88;
+    }
+}
+
+.project {
+    min-width: 100%;
+    color: var(--text-color);
+    border-radius: 15px;
+    padding: 3rem;
+    box-shadow: 0 0 1rem var(--text-color);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(135deg, #1f3c88, #000000, #f2545b, #000000, #1f3c88);
+    background-size: 400% 400%;
+    animation: gradientBackground 20s ease infinite;
+}
+
+.project:hover {
+    transform: scale(1.05);
+}
+
+.project-slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.project-window {
+    overflow: hidden;
+    width: 80%;
+    max-width: 900px;
+    border-radius: 15px;
+}
+
+.projects-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.project h3 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+}
+
+.project p {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.project a {
+    padding: 1rem 3rem;
+    background: var(--text-color);
+    border-radius: 4rem;
+    color: #1f3c88;
+    font-weight: 600;
+    box-shadow: 0 0 1rem var(--text-color);
+    text-decoration: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.project a:hover {
+    box-shadow: none;
+}
+
+.project:hover {
+    transform: scale(1.05);
+    background-color: #e53d42;
+}
+
+.slider-btn {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 4rem;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    padding: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.slider-btn:hover {
+    color: var(--second-bg-color);
+}
+
+.left-btn {
+    left: -2rem;
+}
+
+.right-btn {
+    right: -2rem;
+}
+
+
+/* -------------------- MODAL (PROJECTS) -------------------- */
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: linear-gradient(135deg, #1f3c88, #000000, #f2545b, #000000, #1f3c88);
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+    color: #ffffff;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+.modal-content h2 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.modal-content p {
+    font-size: 2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.close-btn {
+    color: #ff5555;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #ff0000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalVideoContainer {
+    margin-top: 20px;
+}
+
+.modal-content img {
+    margin-bottom: 20px;
+    border-radius: 10px;
+    width: 80%;
+    height: auto;
+}
+
+.github-btn {
+    display: inline-block;
+    padding: 1rem 2.8rem;
+    background: var(--text-color);
+    border-radius: 4rem;
+    box-shadow: 0 0 1rem var(--text-color);
+    font-size: 1.6rem;
+    color: #1f3c88;
+    letter-spacing: .1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .5s ease-in;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.github-btn:hover {
+    box-shadow: none;
+    background: var(--second-bg-color);
+    color: #ffffff;
 }
