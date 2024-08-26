@@ -497,14 +497,41 @@ form .btn2 {
         justify-content: center;
     }
 
-    .project_window {
-        flex-direction: column;
-        align-items: center;
+    .projects-wrapper {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
 
     .project {
-        flex-basis: 90%;
-        margin-bottom: 2rem;
+        flex: 0 0 auto;
+        scroll-snap-align: start;
+        width: 90%;
+        margin-right: 1rem;
+    }
+
+    .project h3 {
+        font-size: 2rem;
+    }
+
+    .project p {
+        font-size: 1.6rem;
+    }
+
+    .project a {
+        padding: 0.8rem 2rem;
+        font-size: 1.4rem;
+    }
+
+    .slider-btn {
+        display: none;
+    }
+
+    .left-btn, .right-btn {
+        left: -1rem;
+        right: -1rem;
     }
 
     .contact-left, .contact-right {

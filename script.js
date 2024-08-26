@@ -226,3 +226,52 @@ document.addEventListener('DOMContentLoaded', (event) => {
         }
     });
 });
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const projectsWrapper = document.querySelector('.projects-wrapper');
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    projectsWrapper.addEventListener('mousedown', (e) => {
+        isDown = true;
+        projectsWrapper.classList.add('active');
+        startX = e.pageX - projectsWrapper.offsetLeft;
+        scrollLeft = projectsWrapper.scrollLeft;
+    });
+
+    projectsWrapper.addEventListener('mouseleave', () => {
+        isDown = false;
+        projectsWrapper.classList.remove('active');
+    });
+
+    projectsWrapper.addEventListener('mouseup', () => {
+        isDown = false;
+        projectsWrapper.classList.remove('active');
+    });
+
+    projectsWrapper.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - projectsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        projectsWrapper.scrollLeft = scrollLeft - walk;
+    });
+
+    projectsWrapper.addEventListener('touchstart', (e) => {
+        isDown = true;
+        startX = e.touches[0].pageX - projectsWrapper.offsetLeft;
+        scrollLeft = projectsWrapper.scrollLeft;
+    });
+
+    projectsWrapper.addEventListener('touchend', () => {
+        isDown = false;
+    });
+
+    projectsWrapper.addEventListener('touchmove', (e) => {
+        if (!isDown) return;
+        const x = e.touches[0].pageX - projectsWrapper.offsetLeft;
+        const walk = (x - startX) * 2;
+        projectsWrapper.scrollLeft = scrollLeft - walk;
+    });
+});
