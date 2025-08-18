@@ -272,6 +272,48 @@ header .navbar a {
     font-size: 1.4em;
 }
 
+.projects .container .projects-grid .project-card .project3 h2{
+    padding: 10px;
+}
+
+.projects .container .projects-grid .project-card .project3 p {
+    padding: 10px;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links a {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links a:hover{
+    opacity: 0.8;
+    font-size: 1.4em;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links a {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.projects .container .projects-grid .project-card .project3 .github-links a:hover{
+    opacity: 0.8;
+    font-size: 1.4em;
+}
+
 
 /* CONTACT ME SECTION */
 
