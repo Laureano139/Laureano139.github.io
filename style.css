@@ -158,6 +158,7 @@ header .navbar a {
     justify-content: space-between;
     align-items: center;
     text-align: center;
+    max-width: 1400px;
 }
 
 .about-contents .about-col2 .about-text {
@@ -310,6 +311,65 @@ header .navbar a {
 }
 
 .projects .container .projects-grid .project-card .project3 .github-links a:hover{
+    opacity: 0.8;
+    font-size: 1.4em;
+}
+
+.projects .container .projects-grid .project-card .project4 h2{
+    padding: 10px;
+}
+
+.projects .container .projects-grid .project-card .project4 p {
+    padding: 10px;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a:hover{
+    opacity: 0.8;
+    font-size: 1.4em;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a:hover{
+    opacity: 0.8;
+    font-size: 1.4em;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links {
+    display: flex;
+    justify-content: space-between;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a {
+    color: var(--primaryColor);
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 30px;
+}
+
+.projects .container .projects-grid .project-card .project4 .github-links a:hover{
     opacity: 0.8;
     font-size: 1.4em;
 }
